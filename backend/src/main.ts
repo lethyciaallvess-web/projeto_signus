@@ -9,6 +9,8 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api');
 
+  app.enableCors({ origin: 'http://localhost:5173' });
+
   app.use(
     '/img',
     express.static(join(process.cwd(), 'src', 'img')),
