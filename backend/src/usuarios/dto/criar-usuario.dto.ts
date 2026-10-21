@@ -28,6 +28,9 @@ export class CriarUsuarioDto {
       : value,
   )
   @IsEmail({}, { message: 'Informe um e-mail válido.' })
+  @Matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, {
+    message: 'Informe um e-mail válido.',
+  })
   @MaxLength(255)
   email!: string;
 
